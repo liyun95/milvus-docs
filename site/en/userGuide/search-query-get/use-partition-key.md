@@ -260,6 +260,12 @@ export filter='partition_key in ["x", "y", "z"] && <other conditions>'​
 
 ```
 
+<div class="alert note">
+
+You have to replace `partition_key` with the name of the field that is designated as the partition key.
+
+</div>
+
 ## Use Partition Key Isolation
 
 In the multi-tenancy scenario, you can designate the scalar field related to tenant identities as the partition key and create a filter based on a specific value in this scalar field. To further improve search performance in similar scenarios, Milvus introduces the Partition Key Isolation feature.
