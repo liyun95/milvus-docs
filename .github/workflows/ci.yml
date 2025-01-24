@@ -53,3 +53,4 @@ jobs:
           git add .
           git commit -m "Release new docs to master"
           git push -f origin master
+        continue-on-error: true
