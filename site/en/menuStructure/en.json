@@ -1433,7 +1433,7 @@
             "isMenu": true,
             "children": [
               {
-                "label": "Overview",
+                "label": "RBAC Overview",
                 "id": "rbac.md",
                 "order": 0,
                 "children": []
