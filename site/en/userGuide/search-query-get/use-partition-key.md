@@ -212,7 +212,7 @@ curl --request POST \​
 
 ### Create Filtering Condition​
 
-When conducting ANN searches in a collection with the Partition Key feature enabled, you need to include a filtering expression involving the Partition Key in the search request. In the filtering expression, you can restrict the Partition Key value within a specific range so that Milvus restricts the search scope within the corresponding partitions.​
+When conducting ANN searches in a collection with the Partition Key feature enabled, you need to include a filtering expression involving the Partition Key in the search request. In the filtering expression, you can restrict the Partition Key value within a specific range so that Milvus restricts the search scope within the corresponding partitions.​ For more efficient deletion, it's recommended to include a filter expression specifying a single partition key. This limits the delete operation to a specific partition, reducing compaction write amplification and conserving compaction and indexing resources.
 
 The following examples demonstrate Partition-Key-based filtering based on a specific Partition Key value and a set of Partition Key values.​
 
