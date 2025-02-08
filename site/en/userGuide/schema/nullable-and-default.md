@@ -489,7 +489,8 @@ curl --request POST \​
 -d '{​
     "collectionName": "user_profiles_null",​
     "expr": "",​
-    "outputFields": ["id", "age"]​
+    "outputFields": ["id", "age"]​,
+    "limit": 10
 }'​
 ​
 # {"code":0,"cost":0,"data":[{"age":30,"id":1},{"age":null,"id":2},{"age":null,"id":3}]}​
