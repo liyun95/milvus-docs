@@ -8,11 +8,11 @@ deprecate: true
 
 # Migrate Data from HDF5 to Milvus
 
-This topic describes how to import data in HDF5 files into Milvus using [MilvusDM](migrate_overview.md), an open-source tool specifically designed for Milvus data migration. 
+This topic describes how to import data in HDF5 files into Milvus using [VTS](https://github.com/zilliztech/vts), an open-source tool specifically designed for Milvus data migration. 
 
 ## Prerequisites
 
-You need to [install MilvusDM](milvusdm_install.md) before migrating Milvus data.
+You need to [install VTS](https://github.com/zilliztech/vts) before migrating Milvus data.
 
 ## 1. Download YAML file
 
