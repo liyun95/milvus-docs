@@ -7,7 +7,7 @@ deprecate: true
 ---
 
 # Version Migration
-This topic describes how to migrate data from Milvus 1.x to Milvus 2.0 using [MilvusDM](migrate_overview.md), an open-source tool specifically designed for Milvus data migration. 
+This topic describes how to migrate data from Milvus 1.x to Milvus 2.0 using [VTS](https://github.com/zilliztech/vts), an open-source tool specifically designed for Milvus data migration. 
 
 <div class="alert note">
 MilvusDM does not support migrating data from Milvus 2.0 standalone to Milvus 2.0 cluster.
@@ -95,4 +95,4 @@ $ milvusdm --yaml M2M.yaml
   - Learn how to [Migrate Data from Faiss to Milvus](f2m.md).
   - Learn how to [Migrate from HDF5 to Milvus](h2m.md).
 - If you are interested in learning more about the data migration tool,
-  - Read the overview of [MilvusDM](migrate_overview.md).
+  - Read the overview of [VTS](mhttps://github.com/zilliztech/vts).
