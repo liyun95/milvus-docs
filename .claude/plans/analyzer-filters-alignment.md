@@ -1,6 +1,6 @@
 # Align three analyzer filters for shared Guides
 
-Status: plan only, awaiting review. No documentation content has changed.
+Status: plan approved by the driver; three-page implementation and local validation complete. Fork review remains a draft. Upstream delivery uses separate clean branches; upstream PR creation remains with the driver.
 
 ## Scope and immutable inputs
 
@@ -20,7 +20,7 @@ Allowed implementation paths:
 - `site/en/userGuide/schema/analyzer/filter/ascii-folding-filter.md`
 - `site/en/userGuide/schema/analyzer/filter/alphanumonly-filter.md`
 
-This plan is the only allowed extra tracked file during review. Do not change global variables, navigation, dependencies, scripts, workflows, other pages, or generated output. Remove this plan with a normal commit before marking the content change ready.
+This plan is the only allowed extra tracked file during review. Do not change global variables, navigation, dependencies, scripts, workflows, other pages, or generated output. Retain this plan and the review history on the fork draft branch. The driver approved separate fresh upstream branches containing only the three final content files and one DCO-signed commit; this plan must never enter those branches.
 
 ## Per-page code inventory
 
@@ -49,7 +49,7 @@ Cloud input paths are `content/en/guides/tutorials/development/analyzer/analyzer
 
 | Page | Defect | Planned correction and evidence requirement |
 | --- | --- | --- |
-| Lowercase, ASCII folding | C# uses `Username = "root"` and `Password = "Milvus"` | Confirm `ConnectConfig.ApiKey` in the target SDK source, then use the existing token variable; do not propagate user/password literals |
+| Lowercase, ASCII folding, Alphanumonly | C# uses `Username = "root"` and `Password = "Milvus"` | Confirm `ConnectConfig.ApiKey` in the target SDK source, then use the existing token variable; do not propagate user/password literals |
 | Lowercase, ASCII folding | NodeJS constructs `MilvusClient` with an address but no token | Confirm the SDK config field and include the existing token variable |
 | ASCII folding | Rust verification calls `client.run_analyzer` without defining a client in any preceding example | Add the verified V2 client initialization with endpoint/token, following the aligned page and SDK source |
 
@@ -98,7 +98,17 @@ On the unchanged v3.0.x source, `npm ci --ignore-scripts --no-audit --no-fund` c
 1. Commit this plan alone as `wip: ... plan` with DCO sign-off. Review the exact plan diff before implementation.
 2. The fork's v3.0.x is behind upstream. Prepare a new fixed review-base branch at the pinned upstream commit so the fork draft PR shows only this plan. Do not reset or force-update the fork's version branch.
 3. Show the driver the English PR draft and exact push/create commands. Push the two new branches and open the fork draft PR only after authorization, then stop for a ruling.
-4. After the plan ruling, implement only the three allowed files and validate them. Remove this plan with a normal commit before ready. Preserve review history; do not rebase, squash, force-push, or reset --hard. This task's explicit plan/history process takes precedence over the general one-commit skill workflow.
+4. After the plan ruling, implement only the three allowed files and validate them. Keep this plan and implementation history on the fork draft. The driver subsequently approved creating fresh branches from upstream v3.0.x and preview, copying only the final three files, and making one DCO-signed commit on each. Verify their content blobs match the reviewed files and that no plan file or plan commit enters either upstream PR. Do not rebase, squash, force-push, or reset --hard.
 5. Prepare separate upstream v3.0.x and preview PR descriptions and commands. The driver creates upstream PRs. Never merge them automatically. zdoc onboarding begins only after the alignment is merged.
 
 No external comments, maintainer messages, production writes, or activation are authorized by this plan.
+
+## Implementation evidence (2026-10-30)
+
+- Implemented 27 new blocks and 12 filled placeholders; each page has three groups of eight languages. Preserved front matter, links, input text, and expected output (with a final newline normalized). No named blocks were needed.
+- Confirmed the C# credential defect also affected Alphanumonly; corrected all three pages to ApiKey. Added missing NodeJS tokens and the ASCII folding Rust client.
+- Added required C++/C# imports. Independent review found the initial C++ JSON include was not exported at the assumed path; all six configuration blocks now use `milvus/thirdparty/nlohmann/json.hpp`, verified against SDK v3.0.4 public headers.
+- Existing Python/Java client snippets gained token authentication, Java gained java.util imports, and Go gained a local context, declaration syntax, and token printing. These changes make the preserved examples usable in a combined example; filter settings and input text remain unchanged.
+- Repository link checks, the changed-page verifier (three pages), md2md 1.3.0 marker check, and `git diff --check` passed in the implementation checkout.
+- Six local preprocessing results (three pages with Milvus variables and three with Cloud variables) passed without unresolved variables. Verified 18 Python snippets, six combined NodeJS examples, six combined Go examples, six Bash examples, and six mocked cURL request payloads. C++ syntax checks passed for 18 configuration/combined examples against pinned SDK public headers. These checks include both variable targets.
+- No Java/Rust/C# compilation, SDK linking, live service execution, full site build, or zdoc shared-docs onboarding build was performed. SDK source evidence does not prove live behavior. Activation remains a later task.
