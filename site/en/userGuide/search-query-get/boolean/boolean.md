@@ -17,7 +17,7 @@ summary: "Milvus provides powerful filtering capabilities that enable precise qu
 - **Arithmetic Operators**: `+`, `-`, `*`, `/`, `%`, and `**` are used for calculations involving numeric fields.
 - **Bitwise Operators**: In {{var.product_name}} 3.0.0 and later, `&`, `|`, and `^` filter integer fields that encode multiple flags, such as permissions or status bits. For details, refer to [Basic Operators](https://milvus.io/docs/basic-operators.md#Bitwise-operators).
 - **Logical Operators**: `AND`, `OR`, and `NOT` combine multiple conditions into complex expressions.
-- **IS NULL and IS NOT NULL Operators**: Use `IS NULL` to select entities whose field value is NULL, or `IS NOT NULL` to select entities whose field value is non-NULL. These operators support scalar fields. Starting in {{var.product_name}} 3.0.3, they also support ordinary vector fields. For supported types, syntax, and examples, refer to [IS NULL and IS NOT NULL operators](basic-operators.md#is-null-and-is-not-null-operators).
+- **IS NULL and IS NOT NULL Operators**: Use `IS NULL` to select entities whose field value is NULL, or `IS NOT NULL` to select entities whose field value is non-NULL. These operators support scalar fields. Starting in {{var.product_name}} 3.0.3, they also support ordinary vector fields. For supported types, syntax, and examples, refer to [IS NULL and IS NOT NULL operators](basic-operators.md#IS-NULL-and-IS-NOT-NULL-operators).
 
 ### Example: Filtering by Color
 
