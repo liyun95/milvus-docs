@@ -17,7 +17,7 @@ summary: "Milvus provides powerful filtering capabilities that enable precise qu
 - **Arithmetic Operators**: `+`, `-`, `*`, `/`, `%`, and `**` are used for calculations involving numeric fields.
 - **Bitwise Operators**: In {{var.product_name}} 3.0.0 and later, `&`, `|`, and `^` filter integer fields that encode multiple flags, such as permissions or status bits. For details, refer to [Basic Operators](https://milvus.io/docs/basic-operators.md#Bitwise-operators).
 - **Logical Operators**: `AND`, `OR`, and `NOT` combine multiple conditions into complex expressions.
-- **IS NULL and IS NOT NULL Operators**: Use `IS NULL` to select entities whose field value is NULL, or `IS NOT NULL` to select entities whose field value is non-NULL. These operators support scalar fields. Starting in {{var.product_name}} 3.0.3, they also support ordinary vector fields. For supported types, syntax, and examples, refer to [IS NULL and IS NOT NULL operators](https://zilliverse.feishu.cn/wiki/LBbUwOGcwi1UMak3eE2cM1gvnUe#HfandwuQloKsmcx8iAjcMjqnnQb).
+- **IS NULL and IS NOT NULL Operators**: Use `IS NULL` to select entities whose field value is NULL, or `IS NOT NULL` to select entities whose field value is non-NULL. These operators support scalar fields. Starting in {{var.product_name}} 3.0.3, they also support ordinary vector fields. For supported types, syntax, and examples, refer to [IS NULL and IS NOT NULL operators](basic-filtering-operators.md#is-null-and-is-not-null-operators).
 
 ### Example: Filtering by Color
 
@@ -735,7 +735,7 @@ For more details on array operators, see <cite doc-id="MaWywRYCniq6vwkJsT7c2wAyn
 
 The `LIKE`, `=~`, and `!~` operators match string patterns on `VARCHAR` fields, JSON string paths, and specific `ARRAY<VARCHAR>` elements. Use `LIKE` for simple wildcard patterns. Use `=~` and `!~` for RE2 regular expressions.
 
-For details, refer to [Pattern Matching](https://zilliverse.feishu.cn/wiki/PFbNwB7Mli18n6k6VWScGcpWndc).
+For details, refer to [Pattern Matching](https://milvus.io/docs/pattern-matching.md).
 
 #### `TEXT_MATCH` operator
 
